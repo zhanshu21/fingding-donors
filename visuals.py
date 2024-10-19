@@ -129,8 +129,10 @@ def feature_plot(importances, X_train, y_train):
     # Creat the plot
     fig = pl.figure(figsize = (9,5))
     pl.title("Normalized Weights for First Five Most Predictive Features", fontsize = 16)
+    # np.arange(5): This generates an array of values [0, 1, 2, 3, 4] for the x-axis (representing the five features).
     pl.bar(np.arange(5), values, width = 0.6, align="center", color = '#00A000', \
           label = "Feature Weight")
+    # np.cumsum(values): This computes the cumulative sum of the feature weights.
     pl.bar(np.arange(5) - 0.3, np.cumsum(values), width = 0.2, align = "center", color = '#00A0A0', \
           label = "Cumulative Feature Weight")
     pl.xticks(np.arange(5), columns)
