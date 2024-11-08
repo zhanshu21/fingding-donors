@@ -13,25 +13,40 @@ This project requires **Python 3.x** and the following Python libraries installe
 
 You will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html)
 
-We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project. 
-
-### Code
-
-Template code is provided in the `finding_donors.ipynb` notebook file. You will also be required to use the included `visuals.py` Python file and the `census.csv` dataset file to complete your work. While some code has already been implemented to get you started, you will need to implement additional functionality when requested to successfully complete the project. Note that the code included in `visuals.py` is meant to be used out-of-the-box and not intended for students to manipulate. If you are interested in how the visualizations are created in the notebook, please feel free to explore this Python file.
 
 ### Run
 
 In a terminal or command window, navigate to the top-level project directory `finding_donors/` (that contains this README) and run one of the following commands:
 
 ```bash
-ipython notebook finding_donors.ipynb
+ipython notebook kaggle-competetion.ipynb
 ```  
 or
 ```bash
-jupyter notebook finding_donors.ipynb
+jupyter notebook kaggle-competetion.ipynb
 ```
 
 This will open the iPython Notebook software and project file in your browser.
+
+### Data Analysis and Preprocessing
+
+**Data Exploration and Analysis**
+
+An in-depth data analysis was conducted to understand the distribution and characteristics of each feature. Key insights included examining relationships between features, identifying skewness in numerical data, and calculating correlations with the target variable (```income```). This analysis helped guide the preprocessing steps.
+
+**Data Preprocessing**
+To prepare the data for model training, several preprocessing steps were applied:
+
+1. Encoding Categorical Variables: All categorical features were encoded to numerical values, including both one-hot encoding and frequency encoding where appropriate.
+2. Handling Missing Values: The training set was checked for any missing or inconsistent data. In the test dataset, missing values were handled through a combination of mean, median, and mode imputation strategies to ensure no data was left incomplete.
+3. Feature Scaling: Numerical features were standardized using standard scaling,  to improve model convergence and performance.
+   
+**Model Training and Evaluation**
+
+Various machine learning models, including a neural network implemented in PyTorch, were trained and evaluated on this dataset. The neural network underwent tuning of layers and dropout rates to optimize performance. Additionally, traditional models like Decision Tree, Random Forest, and AdaBoost were also applied
+
+**Kaggle Submission**
+The preprocessed data and optimized models were used to submit predictions to the Kaggle competition, aiming to maximize accuracy in identifying high-income individuals for targeted donor outreach.
 
 ### Data
 
@@ -54,3 +69,4 @@ The modified census dataset consists of approximately 32,000 data points, with e
 
 **Target Variable**
 - `income`: Income Class (<=50K, >50K)
+
